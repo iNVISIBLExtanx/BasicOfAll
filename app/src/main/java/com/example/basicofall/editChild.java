@@ -3,6 +3,7 @@ package com.example.basicofall;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,5 +34,22 @@ public class editChild extends AppCompatActivity {
         name.setText(c.getNAME_CHILD());
         age.setText(c.getDOB());
 
+
+        addChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String edited_name = name.getText().toString();
+                String edited_age = age.getText().toString();
+
+                childModel editedChild = new childModel();
+                editedChild.setID(ID);
+                editedChild.setDOB(edited_age);
+                editedChild.setNAME_CHILD(edited_name);
+
+                int status = dBhandler.updateChild(editedChild);
+                System.out.println(status);
+                startActivity(new Intent(context, Main2Activity.class));
+            }
+        });
     }
 }
