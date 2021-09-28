@@ -1,10 +1,15 @@
 package com.example.basicofall;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBhandler extends SQLiteOpenHelper {
     private static final int VERSION = 1;
@@ -94,6 +99,52 @@ public class DBhandler extends SQLiteOpenHelper {
 
         // Create table again
         onCreate(db);
+    }
+
+    public void addNewChild(childModel newChild)
+    {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(NAME_CHILD, newChild.getNAME_CHILD());
+        contentValues.put(DOB, newChild.getDOB());
+
+        // saving to table
+        sqLiteDatabase.insert(TEI_TABLE, null, contentValues);
+
+        // close database
+        sqLiteDatabase.close();
+
+    }
+
+    public int countTEI()
+    {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        String query = "SELECT * FROM " + TEI_TABLE;
+
+        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
+        return cursor.getCount();
+    }
+
+    public List<childModel> getAllChildren()
+    {
+        List<childModel> children = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM " + TEI_TABLE;
+
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                childModel c = new childModel();
+                c.setID(cursor.getInt(0));
+                c.setNAME_CHILD(cursor.getString(5));
+                c.setDOB(cursor.getString(7));
+
+                children.add(c);
+            }while(cursor.moveToNext());
+        }
+        return children;
     }
 
 }
