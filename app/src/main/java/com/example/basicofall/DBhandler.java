@@ -147,4 +147,13 @@ public class DBhandler extends SQLiteOpenHelper {
         return children;
     }
 
+    public void deleteChild(int id)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+
+        db.delete(TEI_TABLE, ID + " =?", new String[]{String.valueOf(id)} );
+
+        db.close();
+    }
+
 }

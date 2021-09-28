@@ -64,8 +64,8 @@ public class Main2Activity extends AppCompatActivity {
 
                 childModel c = children.get(i);
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("Test");
-                builder.setMessage("Message");
+                builder.setTitle(c.getNAME_CHILD());
+                builder.setMessage(c.getDOB());
 
 
                 builder.setPositiveButton("Finished", new DialogInterface.OnClickListener() {
@@ -79,6 +79,8 @@ public class Main2Activity extends AppCompatActivity {
                 builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        db.deleteChild(c.getID());
+                        startActivity(new Intent(context, Main2Activity.class));
 
                     }
                 });
