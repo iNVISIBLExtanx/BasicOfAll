@@ -156,4 +156,22 @@ public class DBhandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public childModel getChild(int id)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor c = db.query(TEI_TABLE, new String[]{ID, NAME_CHILD, DOB}, ID + "=?",
+                new String[]{String.valueOf(id)}, null,
+                null, null, null);
+
+        childModel child = new childModel();
+        if(c != null)
+        {
+            c.moveToFirst();
+            child.setNAME_CHILD(c.getString(1));
+            child.setDOB(c.getString(2));
+            return child;
+        }
+        return null;
+    }
+
 }

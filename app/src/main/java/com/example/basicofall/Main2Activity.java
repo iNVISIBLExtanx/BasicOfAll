@@ -88,7 +88,9 @@ public class Main2Activity extends AppCompatActivity {
                 builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(context, editChild.class));
+                        Intent intent = new Intent(context, editChild.class);
+                        intent.putExtra("id", String.valueOf(c.getID()) );
+                        startActivity(intent);
                     }
                 });
 
