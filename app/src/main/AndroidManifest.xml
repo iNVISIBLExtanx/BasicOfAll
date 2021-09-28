@@ -12,14 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicOfAll">
         <activity
+            android:name=".editChild"
+            android:exported="true" />
+        <activity
+            android:name=".addChild"
+            android:exported="true" />
+        <activity
             android:name=".Main2Activity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER"/>
-                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

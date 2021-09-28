@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editChild">
+
+    <EditText
+        android:id="@+id/editTxtNameEdit"
+        android:layout_width="263dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="250dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTxtAgeEdit"
+        android:layout_width="276dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Age"
+        app:layout_constraintStart_toStartOf="@+id/editTxtNameEdit"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtNameEdit" />
+
+    <Button
+        android:id="@+id/addbtnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="76dp"
+        android:text="Edit Child"
+        app:layout_constraintStart_toStartOf="@+id/editTxtAgeEdit"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtAgeEdit" />
+</androidx.constraintlayout.widget.ConstraintLayout>
