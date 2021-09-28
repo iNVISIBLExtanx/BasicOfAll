@@ -3,19 +3,9 @@ package com.example.basicofall;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import android.util.Log;
 
-import java.io.IOException;
-
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class Main2Activity extends AppCompatActivity {
 
