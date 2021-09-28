@@ -1,13 +1,16 @@
 package com.example.basicofall;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -54,6 +57,42 @@ public class Main2Activity extends AppCompatActivity {
 
         Toast t = Toast.makeText(this, String.valueOf(db.countTEI()), Toast.LENGTH_LONG);
         t.show();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                childModel c = children.get(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Test");
+                builder.setMessage("Message");
+
+
+                builder.setPositiveButton("Finished", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(context, Main2Activity.class));
+
+                    }
+                });
+
+                builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(context, editChild.class));
+                    }
+                });
+
+                builder.show();
+            }
+        });
     }
 
 
