@@ -18,7 +18,7 @@ public class editChild extends AppCompatActivity {
         setContentView(R.layout.activity_edit_child);
 
         name = findViewById(R.id.editTxtNameEdit);
-        age = findViewById(R.id.editTxtAgeEdit);
+        age = findViewById(R.id.edittxtDOB);
         addChild = findViewById(R.id.addbtnEdit);
     }
 }

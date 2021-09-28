@@ -19,14 +19,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTxtAge"
-        android:layout_width="276dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="56dp"
+        android:id="@+id/txtDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="Age"
+        android:inputType="date"
         app:layout_constraintStart_toStartOf="@+id/editTxtName"
         app:layout_constraintTop_toBottomOf="@+id/editTxtName" />
 
@@ -37,6 +35,6 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="76dp"
         android:text="Add Child"
-        app:layout_constraintStart_toStartOf="@+id/editTxtAge"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtAge" />
+        app:layout_constraintStart_toStartOf="@+id/txtDOB"
+        app:layout_constraintTop_toBottomOf="@+id/txtDOB" />
 </androidx.constraintlayout.widget.ConstraintLayout>

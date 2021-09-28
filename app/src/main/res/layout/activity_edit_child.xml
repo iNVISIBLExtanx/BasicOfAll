@@ -18,25 +18,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTxtAgeEdit"
-        android:layout_width="276dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="56dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="Age"
-        app:layout_constraintStart_toStartOf="@+id/editTxtNameEdit"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtNameEdit" />
 
     <Button
         android:id="@+id/addbtnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="80dp"
         android:text="Edit Child"
-        app:layout_constraintStart_toStartOf="@+id/editTxtAgeEdit"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtAgeEdit" />
+        app:layout_constraintStart_toStartOf="@+id/edittxtDOB"
+        app:layout_constraintTop_toBottomOf="@+id/edittxtDOB" />
+
+    <EditText
+        android:id="@+id/edittxtDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/editTxtNameEdit"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtNameEdit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
